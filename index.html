@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+<title>TrackballRotator Demo</title>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+    }
+    
+    #canvas-holder {
+        display: flex;
+        width: 100vw;
+        height: 100vh;
+        align-items: center;
+        justify-content: left;
+        background-color: white;
+    }
+    
+    #webglcanvas {
+        display: block;
+        width: 70%;
+        height: 70%;
+    }
+    
+    .two {
+        display: flex;
+        flex-flow: column;
+        padding: 10px;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .one {
+        background-color: green;
+        border-radius: 70px;
+        width: 20%;
+        text-align: left;
+        position: absolute;
+        color: white;
+    }
+    
+    h3 {
+        margin: 5px;
+    }
+
+</style>
+
+<script src="./trackball-rotator.js"></script>
+<script src="https://webgl2fundamentals.org/webgl/resources/m4.js"></script>
+<script src="./shader.gpu"></script>
+<script src="./stereo_camera.js"></script>
+
+<script src="./main.js"></script>
+
+</head>
+<body onload="init()">
+    <noscript><hr><h3>This page requires Javascript and a web browser that supports WebGL</h3><hr></noscript>
+    <div class="one">
+        <div class="two">
+            <div class="tree">
+                <h3>Ding-dong</h3>
+                <div class="slider">
+                    <span>Step count: </span>
+                    <input type="range" min="0" max="150" step="10" value="50" id="sphere_div">
+                </div>
+                <div class="check-box">
+                    <span>Filling </span>
+                    <input type="checkbox" id="filling">
+                </div>
+                <div class="slider">
+                    <span>Eye separation: </span>
+                    <input type="range" min="0" max="100" step="5" value="70" id="eye_separation">
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div id="canvas-holder">
+        <canvas width="500px" height="500px" id="webglcanvas"></canvas>
+    </div>
+ 
+
+</body></html>
